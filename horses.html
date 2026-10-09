@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f32">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('galant-theme');
+        document.documentElement.dataset.theme = t || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+  <meta name="description" content="Фотографии и истории лошадей конного клуба Galant: архивные материалы и рассказы о его постоянных жителях.">
+  <title>Наши лошади — конный клуб Galant</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/images/galant-08.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/styles.css?v=20261008h">
+  <script src="assets/script.js?v=20261008h" defer></script>
+</head>
+<body>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+  <symbol id="icon-vk" viewBox="0 0 24 24"><path fill="currentColor" d="M12.82 17.35h-2.18c-.12 0-.23-.04-.34-.12-.12-.08-.18-.2-.25-.34-.16-.31-.7-1.34-1.59-3.09-1.32-1.76-2.77-3.36-2.8-3.4-.03-.04-.03-.09 0-.13.03-.04.12-.06.25-.06h2.47c.13 0 .24.03.33.1.08.07.13.17.18.29l2.9 3.46 2.42-3.44a.58.58 0 0 1 .4-.21h2.46c.16 0 .26.03.3.09.05.07.05.18 0 .3-.05.12-.4.55-1.03 1.29L16.5 15.1s3.87 3.87 3.87 4.05c0 .1-.04.17-.11.22-.08.04-.2.07-.36.07h-2.2c-.16 0-.29-.03-.4-.08a4.45 4.45 0 0 1-.48-.36Z"/></symbol>
+  <symbol id="icon-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M21.7 4.1 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.6 13.2l-4.4-1.4c-1-.3-1-1 .2-1.4l17.1-6.6c.8-.3 1.5.2 1.2 1.1Z"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.3 4.8 4.9-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12.04 20Zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.1 1.6 2.6 4 3.6 2.4 1 2.4.7 2.9.6.4-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/></symbol>
+  <symbol id="icon-viber" viewBox="0 0 24 24"><path fill="currentColor" d="M12.1 2C6.6 2 2.2 6.3 2.2 11.7c0 1.9.5 3.7 1.5 5.3L2 22l5.1-1.7a9.8 9.8 0 0 0 4.9 1.3h.1c5.4 0 9.8-4.3 9.8-9.7S17.5 2 12.1 2Zm5.6 13.5c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.7-.9-4.4-3.2-4.5-3.4-.1-.1-1-1.3-1-2.5 0-1.2.6-1.8.8-2.1.2-.2.5-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.1-.3.3-.1.6.1.3.6 1.1 1.3 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.5.3.1.2.1.6-.1 1.1Z"/><circle cx="7.6" cy="7.2" r="1" fill="#fff"/><circle cx="10.6" cy="7.2" r="1" fill="#fff"/><circle cx="13" cy="7.2" r="1" fill="#fff"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M7.3 3.5 10 8.2 8 10.5c1.1 2.3 2.9 4 5.2 5.1l2.3-2 4.7 2.7-.7 3.3c-.2.9-1 1.5-1.9 1.4C9 20.3 3.7 15 3 6.4c-.1-.9.5-1.7 1.4-1.9l2.9-1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M10 7l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 4C12 4 5 7 5 14c0 3 2 5 5 5 7 0 10-7 10-15Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 21c3-5 7-9 13-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 20v-1.5c0-2-1.8-3.5-4-3.5H7c-2.2 0-4 1.5-4 3.5V20M9.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM17 11a3 3 0 1 0 0-6M18 15c1.8.3 3 1.6 3 3.2V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 7h4l1.5-2h5L16 7h4v12H4V7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 2c.7 5.2 2.8 8.5 8 10-5.2 1.5-7.3 4.8-8 10-.7-5.2-2.8-8.5-8-10 5.2-1.5 7.3-4.8 8-10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 18h3a3 3 0 0 0 3-3v-3a3 3 0 0 1 3-3h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 13.2A8 8 0 1 1 10.8 4 6.5 6.5 0 0 0 20 13.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+</svg>
+  <a class="sr-only" href="#main">Перейти к основному содержанию</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Galant — главная"><span class="logo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-spark"></use></svg></span><span class="logo-copy"><span class="logo-name">GALANT</span><span class="logo-subtitle">конный клуб</span></span></a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="index.html">Главная</a>
+        <a class="nav-link" href="services.html">Услуги и цены</a>
+        <a class="nav-link" href="horses.html" aria-current="page">Наши лошади</a>
+        <a class="nav-link" href="index.html#location">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone top-phone" href="tel:+79997156651"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+7 (999) 715-66-51</span></a>
+        <button class="button button-accent button-small header-cta" type="button" data-booking="Прогулка или тренировка">Записаться</button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Включить тёмную тему" aria-pressed="false"><svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"></use></svg><svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"></use></svg></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню"><svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg><svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Мобильная навигация" aria-hidden="true">
+    <a href="index.html">Главная</a><a href="services.html">Услуги и цены</a><a href="horses.html">Наши лошади</a><a href="index.html#location">Контакты</a>
+    <button class="button button-accent" type="button" data-booking="Прогулка или тренировка">Записаться</button>
+    <div class="mobile-contacts"><a class="top-phone" href="tel:+79997156651"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+7 (999) 715-66-51</span></a></div>
+  </nav>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div class="page-hero-copy reveal">
+          <span class="eyebrow">Истории лошадей</span>
+          <h1 class="page-hero-title">У каждой лошади <em>своя история</em></h1>
+          <p class="section-copy">В галерее собраны архивные кадры конного клуба, а в историях — характеры и судьбы лошадей, которые живут в Galant.</p>
+          <div class="page-hero-meta">
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg>8 историй</span>
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="#icon-camera"></use></svg>11 фотографий</span>
+            <span class="tag"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg>Природа и движение</span>
+          </div>
+          <div class="hero-actions"><button class="button button-accent" type="button" data-booking="Прогулка или тренировка">Познакомиться в седле<svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button><a class="button button-outline" href="#stories">Читать истории</a></div>
+        </div>
+        <div class="page-hero-media reveal">
+          <img class="page-hero-image" src="assets/images/galant-08.jpg" alt="Лошади конного клуба Galant на природе" width="1024" height="683" fetchpriority="high">
+          <div class="page-hero-card"><strong>Лучше увидеть лично</strong><p>На первой прогулке или тренировке инструктор поможет познакомиться с лошадьми и выбрать подходящую пару.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header-copy"><span class="kicker">Фотогалерея</span><h2 class="section-title">Моменты <em>клуба</em></h2></div>
+          <p class="section-copy">Архивные портреты, природные маршруты и люди, которые создают атмосферу Galant.</p>
+        </div>
+        <div class="horses-gallery">
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-01.jpg" alt="Моисей, лошадь конного клуба Galant" width="1767" height="1152" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-02.jpg" alt="Мальборо, лошадь конного клуба Galant" width="1920" height="1920" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-03.jpg" alt="Любофффь, лошадь конного клуба Galant" width="2560" height="1714" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-04.jpg" alt="Русский рысак конного клуба Galant" width="2048" height="1152" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-05.jpg" alt="Пентагон, лошадь конного клуба Galant" width="614" height="807" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-06.jpg" alt="Моника, лошадь конного клуба Galant" width="720" height="960" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-07.jpg" alt="Пушок, лошадь конного клуба Galant" width="720" height="960" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-vk-08.jpg" alt="Сюрприз, лошадь конного клуба Galant" width="719" height="960" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-02.jpg" alt="Лошадь конного клуба Galant" width="684" height="1024" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-07.jpg" alt="Лошадь и всадник на прогулке" width="684" height="1024" loading="lazy"></figure>
+          <figure class="gallery-item reveal"><img src="assets/images/galant-10.jpg" alt="Лошадь клуба Galant на природе" width="768" height="1024" loading="lazy"></figure>
+        </div>
+        <p class="photo-credit">Фотографии: <a href="https://vk.ru/horsegalant" target="_blank" rel="noopener noreferrer">официальное сообщество Galant во ВКонтакте</a> и открытая карточка клуба на Яндекс Картах.</p>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="stories">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header-copy"><span class="kicker">Наши лошади</span><h2 class="section-title">Имена, которые <em>запоминаются</em></h2></div>
+          <p class="section-copy">Истории лошадей, которые живут в клубе или остались в его архиве. У каждой — свой возраст, характер и путь к всаднику.</p>
+        </div>
+        <div class="stories-grid">
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">М</span><div><span class="story-label">Архив · 18 октября 2016</span><h3>Моисей</h3><p>Фотография Моисея открыла архивный альбом «Наши лошади». Подпись к ней — «Наш попрошайка Моисей».</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">М</span><div><span class="story-label">Долгожитель</span><h3>Моника</h3><p>Настоящий долгожитель нашей конюшни — Монике уже 26 лет. Важная дама с характером, которая прекрасно знает себе цену и иногда любит настоять на своём. Когда-то она славилась невероятно мягким галопом — настолько комфортным, что, кажется, можно было пить чай прямо в седле. Сейчас Моника уже не бегает и наслаждается более спокойной жизнью.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">М</span><div><span class="story-label">Новый дом</span><h3>Мятный</h3><p>Добрый беспородный конь с непростой историей — к нам Мятный попал с бойни. Теперь его главные заботы — вкусно поесть и получить свою порцию внимания. Крупный и крепкий, поэтому подходит в том числе для всадников более высокой весовой категории.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">Х</span><div><span class="story-label">Мягкие аллюры</span><h3>Хвала</h3><p>Наша неторопливая лошадь для тех, кто никуда не спешит. Главное достоинство Хвалы — невероятно мягкие аллюры: и рысь, и галоп у неё очень комфортные, поэтому ездить на ней — настоящее удовольствие.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">К</span><div><span class="story-label">Универсальный темп</span><h3>Костя</h3><p>Энергичный и довольно универсальный парень. Хорошо подстраивается под темп всадника: может спокойно работать в размеренном ритме, а если позволить — с удовольствием добавит скорости. С ним точно не скучно.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">Ф</span><div><span class="story-label">Быстрый шаг</span><h3>Федя</h3><p>Один из относительно новых жителей нашей конюшни. Активный, хорошо управляемый и особенно запоминается своим бодрым, быстрым шагом. Любит двигаться вперёд и не относится к тем лошадям, которых приходится долго уговаривать.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">Б</span><div><span class="story-label">Конь инструктора</span><h3>Баграт</h3><p>Личный конь одного из наших инструкторов. Резвый, энергичный и ориентированный на своего человека — настоящий конь одного хозяина со своим характером и сложившимися привычками.</p></div></article>
+          <article class="story-card reveal"><span class="story-monogram" aria-hidden="true">Т</span><div><span class="story-label">Чувствительный</span><h3>Тугрик</h3><p>Ещё один инструкторский конь. Очень умный и невероятно чувствительный к средствам управления, особенно к шенкелю: ему достаточно совсем лёгкого сигнала, чтобы понять всадника. Внимательный и тонкий в работе.</p></div></article>
+        </div>
+        <div class="services-cta reveal" style="margin-top:28px">
+          <div><h3>Встретьтесь с лошадьми клуба</h3><p>Инструктор подберёт подходящую лошадь с учётом вашего опыта и темпа.</p></div>
+          <button class="button button-light button-small" type="button" data-booking="Прогулка или тренировка">Записаться<svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-header-copy"><span class="kicker" style="color:var(--lime)">Подход Galant</span><h2 class="section-title">Лошадь — партнёр, <em style="color:var(--lime)">а не фон</em></h2></div>
+          <p class="section-copy" style="color:rgba(255,255,255,.62)">От первого знакомства до формирования доверия — всё внимание сосредоточено на безопасном и бережном взаимодействии.</p>
+        </div>
+        <div class="care-list">
+          <article class="care-card reveal"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span><h3>Безопасность</h3><p>Инструктор объясняет правила и помогает безопасно двигаться рядом с лошадью.</p></article>
+          <article class="care-card reveal"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span><h3>Подбор</h3><p>Уровень всадника и характер лошади важны при выборе подходящей пары.</p></article>
+          <article class="care-card reveal"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg></span><h3>Природа</h3><p>Маршруты позволяют менять обстановку, разговаривать и наблюдать за животным.</p></article>
+          <article class="care-card reveal"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-camera"></use></svg></span><h3>Наблюдение</h3><p>Прогулка или тренировка помогает лучше почувствовать поведение, реакции и настроение лошади.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sage">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-band-inner">
+            <div><h2>Встретьтесь с лошадьми в своём темпе</h2><p>Подберём маршрут и подходящую лошадь, а инструктор поможет пройти первый шаг без спешки.</p></div>
+            <div class="cta-actions"><button class="button button-accent" type="button" data-booking="Прогулка или тренировка">Записаться<svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button><a class="top-phone" href="tel:+79997156651" style="color:var(--white)"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+7 (999) 715-66-51</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html" aria-label="Galant — главная"><span class="logo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-spark"></use></svg></span><span class="logo-copy"><span class="logo-name">GALANT</span><span class="logo-subtitle">конный клуб</span></span></a>
+          <p>Конные прогулки, тренировки по верховой езде и катание на пони в Раменском районе. Отдыхайте среди природы и двигайтесь в комфортном темпе.</p>
+        </div>
+        <div><h2 class="footer-title">Навигация</h2><nav class="footer-links" aria-label="Навигация в подвале"><a href="index.html">Главная</a><a href="services.html">Услуги и цены</a><a href="horses.html">Наши лошади</a><a href="index.html#location">Контакты и карта</a></nav></div>
+        <div><h2 class="footer-title">Связаться</h2><div class="footer-contact"><a class="top-phone" href="tel:+79997156651"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+7 (999) 715-66-51</span></a><a href="mailto:bisill63@gmail.com"><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg><span>bisill63@gmail.com</span></a><p><svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg><span>д. Верея, Островское шоссе, 20</span></p><p><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Ежедневно, 10:00–22:00</span></p></div></div>
+      </div>
+      <div class="footer-bottom"><span>© <span data-current-year>2026</span> Конный клуб Galant</span><div class="footer-bottom-links"><span>Отдых для всех и каждого</span><span>Фото: официальное сообщество Galant и Яндекс Карты</span></div></div>
+    </div>
+  </footer>
+
+  <nav class="social-float" aria-label="Социальные сети">
+    <a class="social-link" href="https://vk.ru/horsegalant" target="_blank" rel="noopener noreferrer" aria-label="Galant во ВКонтакте"><span class="social-vk" aria-hidden="true">VK</span></a>
+    <a class="social-link" href="https://t.me/+79997156651" target="_blank" rel="noopener noreferrer" aria-label="Galant в Telegram"><svg class="icon" aria-hidden="true"><use href="#icon-telegram"></use></svg></a>
+    <a class="social-link" href="https://wa.me/79997156651" target="_blank" rel="noopener noreferrer" aria-label="Galant в WhatsApp"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+    <a class="social-link" href="https://viber.click/79997156651" target="_blank" rel="noopener noreferrer" aria-label="Galant в Viber"><svg class="icon" aria-hidden="true"><use href="#icon-viber"></use></svg></a>
+  </nav>
+
+  <dialog class="booking-modal" id="booking" aria-labelledby="booking-title">
+    <div class="modal-header"><div><h2 id="booking-title">Запись в клуб Galant</h2><p>Заполните форму — сообщение откроется в WhatsApp.</p></div><button class="modal-close" type="button" data-booking-close aria-label="Закрыть форму"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+    <form class="booking-form" data-booking-form>
+      <div class="form-grid">
+        <div class="form-field"><label for="booking-name">Ваше имя</label><input id="booking-name" name="name" type="text" autocomplete="name" placeholder="Например, Анна" required></div>
+        <div class="form-field"><label for="booking-phone">Телефон</label><input id="booking-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required></div>
+        <div class="form-field form-field-full"><label for="booking-service">Услуга</label><input id="booking-service" name="service" type="text" value="Прогулка или тренировка" readonly></div>
+        <div class="form-field"><label for="booking-duration">Продолжительность</label><select id="booking-duration" name="duration" required><option value="" selected disabled>Выберите продолжительность</option><option value="30">30 минут</option><option value="60">1 час</option><option value="90">1,5 часа</option><option value="120">2 часа</option><option value="240">4 часа</option><option value="480">8 часов</option></select></div>
+        <div class="form-field"><label for="booking-date">Желаемая дата</label><input id="booking-date" name="date" type="date"></div>
+        <div class="form-field form-field-full"><label for="booking-comment">Опыт и желаемый темп</label><textarea id="booking-comment" name="comment" rows="3" placeholder="Например: я новичок, хочу спокойный темп" required></textarea></div>
+      </div>
+      <label class="form-consent"><input name="consent" type="checkbox" required><span>Я согласен(на) на обработку контактных данных для связи по записи.</span></label>
+      <p class="form-status" data-form-status aria-live="polite"></p>
+      <div class="modal-actions"><a class="modal-phone" href="tel:+79997156651"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Лучше по телефону</span></a><button class="button button-accent" type="submit">Отправить заявку<svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button></div>
+    </form>
+  </dialog>
+</body>
+</html>
