@@ -2305,6 +2305,96 @@ body.menu-open .mobile-menu {
   accent-color: var(--green-700);
 }
 
+.booking-channel-field {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-channel-field legend {
+  color: var(--green-900);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.booking-channels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.channel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 8px 10px;
+  color: var(--green-800);
+  background: #fafbf8;
+  border: 1px solid rgba(18, 58, 46, 0.17);
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.channel-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.channel-btn:hover {
+  border-color: var(--green-700);
+}
+
+.channel-btn.is-active {
+  color: #fff;
+  background: var(--green-700);
+  border-color: var(--green-700);
+}
+
+.booking-copy {
+  display: grid;
+  gap: 10px;
+  margin-top: -6px;
+  padding: 16px;
+  background: var(--sage-100);
+  border: 1px dashed rgba(18, 58, 46, 0.25);
+  border-radius: 13px;
+}
+
+.booking-copy[hidden] {
+  display: none;
+}
+
+.booking-copy label {
+  color: var(--green-900);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.booking-copy textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 13px 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid rgba(18, 58, 46, 0.17);
+  border-radius: 13px;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: none;
+}
+
+.booking-copy .button {
+  justify-self: start;
+}
+
 .modal-actions {
   display: flex;
   align-items: center;
@@ -2773,6 +2863,10 @@ body.menu-open .mobile-menu {
   .modal-actions .button {
     width: 100%;
   }
+
+  .booking-channels {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -3143,6 +3237,41 @@ body.menu-open .mobile-menu {
 
 :root[data-theme="dark"] .form-status {
   color: var(--sage-300);
+}
+
+:root[data-theme="dark"] .booking-channel-field legend {
+  color: var(--sage-300);
+}
+
+:root[data-theme="dark"] .channel-btn {
+  color: var(--sage-300);
+  background: #101d16;
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .channel-btn:hover {
+  border-color: var(--sage-300);
+}
+
+:root[data-theme="dark"] .channel-btn.is-active {
+  color: #fff;
+  background: var(--green-700);
+  border-color: var(--green-700);
+}
+
+:root[data-theme="dark"] .booking-copy {
+  background: #101d16;
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .booking-copy label {
+  color: var(--sage-300);
+}
+
+:root[data-theme="dark"] .booking-copy textarea {
+  color: var(--ink);
+  background: rgba(21, 37, 29, 0.6);
+  border-color: var(--line);
 }
 
 @media (prefers-reduced-motion: reduce) {

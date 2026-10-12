@@ -9,6 +9,11 @@
   const durationSelect = document.querySelector('#booking-duration');
   const dateInput = document.querySelector('#booking-date');
   const status = document.querySelector('[data-form-status]');
+  const bookingContacts = { whatsapp: '79997156651', sms: '+79997156651', telegram: '', vk: '' };
+  const channelButtons = document.querySelectorAll('[data-booking-channel]');
+  const copyBlock = document.querySelector('.booking-copy');
+  const copyText = document.querySelector('#booking-message');
+  const copyButton = document.querySelector('[data-booking-copy]');
 
   const setMenu = (open) => {
     if (!menuToggle || !mobileMenu) return;
@@ -55,6 +60,7 @@
 
   const openBooking = (service = '', duration = '') => {
     if (!bookingDialog) return;
+    if (copyBlock) copyBlock.hidden = true;
     if (serviceInput) serviceInput.value = service || 'Прогулка или тренировка';
     if (durationSelect) durationSelect.value = duration ? String(duration) : '';
     setMenu(false);
@@ -69,6 +75,33 @@
 
   document.querySelectorAll('[data-booking-close]').forEach((button) => {
     button.addEventListener('click', () => bookingDialog?.close());
+  });
+
+  channelButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      channelButtons.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+    });
+  });
+
+  copyButton?.addEventListener('click', () => {
+    if (!copyText || !status) return;
+    copyText.select();
+    copyText.setSelectionRange(0, copyText.value.length);
+    try {
+      if (document.execCommand('copy')) {
+        status.textContent = 'Текст скопирован — вставьте его в диалог.';
+        return;
+      }
+    } catch (error) {}
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(copyText.value).then(() => {
+        status.textContent = 'Текст скопирован — вставьте его в диалог.';
+      });
+    }
   });
 
   bookingDialog?.addEventListener('click', (event) => {
@@ -105,8 +138,29 @@
       comment ? `Опыт и желаемый темп: ${comment}` : ''
     ].filter(Boolean).join('\n');
     const url = `https://wa.me/79997156651?text=${encodeURIComponent(message)}`;
-    if (status) status.textContent = 'Открываем WhatsApp для отправки заявки…';
-    window.open(url, '_blank', 'noopener,noreferrer');
+    let channel = 'whatsapp';
+    channelButtons.forEach((btn) => {
+      if (btn.classList.contains('is-active')) channel = btn.dataset.bookingChannel;
+    });
+    if (channel === 'whatsapp') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      if (status) status.textContent = 'Открываем WhatsApp для отправки заявки…';
+    } else if (channel === 'sms') {
+      window.open(`sms:${bookingContacts.sms}?body=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      if (status) status.textContent = 'Открываем SMS для отправки заявки…';
+    } else {
+      const channelLabel = channel === 'telegram' ? 'Telegram' : 'ВКонтакте';
+      const link = channel === 'telegram' ? bookingContacts.telegram : bookingContacts.vk;
+      if (!link) {
+        if (status) status.textContent = `Ссылка на ${channelLabel} ещё не настроена на сайте.`;
+        return;
+      }
+      if (copyText) copyText.value = message;
+      if (copyBlock) copyBlock.hidden = false;
+      window.open(link, '_blank', 'noopener,noreferrer');
+      if (status) status.textContent = `Открываем ${channelLabel}. Скопируйте текст заявки и вставьте его в диалог.`;
+      return;
+    }
     window.setTimeout(() => {
       bookingDialog?.close();
       bookingForm.reset();
